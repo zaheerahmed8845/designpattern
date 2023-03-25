@@ -1,4 +1,4 @@
-package com.designpattern.builder.mapper;
+package com.designpattern.mapper;
 
 public class User {
 
