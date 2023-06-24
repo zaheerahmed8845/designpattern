@@ -1,4 +1,4 @@
-package com.designpattern.adapter;
+package com.designpattern.adapter.withoutargs;
 
 /**
  * An object adapter. Using composition to translate interface

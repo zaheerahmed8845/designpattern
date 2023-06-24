@@ -1,4 +1,4 @@
-package com.designpattern.adapter;
+package com.designpattern.adapter.adapwithargus;
 
 public class Main {
 
@@ -23,5 +23,8 @@ public class Main {
 		employee.setFullName("Elliot Alderson");
 		employee.setJobTitle("Security Engineer");
 		employee.setOfficeLocation("Allsafe Cybersecurity, New York City, New York");
+		EmployeeRating employeeRating = new EmployeeRating();
+		employeeRating.setRating(10);
+		employee.setEmployeeRating(employeeRating);
 	}
 }

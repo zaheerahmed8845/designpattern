@@ -1,4 +1,4 @@
-package com.designpattern.adapter;
+package com.designpattern.adapter.adapwithargus;
 
 /**
  * Target interface required by new client code
@@ -11,4 +11,9 @@ public interface Customer {
 	String getDesignation();
 
 	String getAddress();
+
+	CustomerRating getRating();
+
+	void setRating(CustomerRating customerRating);
+
 }

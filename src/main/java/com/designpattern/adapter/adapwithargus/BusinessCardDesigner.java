@@ -1,4 +1,4 @@
-package com.designpattern.adapter;
+package com.designpattern.adapter.adapwithargus;
 
 /**
  * Client code which requires Customer interface.
@@ -10,6 +10,7 @@ public class BusinessCardDesigner {
 		card += customer.getName();
 		card += "\n" + customer.getDesignation();
 		card += "\n" + customer.getAddress();
+
 		return card;
 	}
 }
