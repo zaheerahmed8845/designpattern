@@ -24,5 +24,4 @@ public class BookShallow implements Cloneable {
     public String toString() {
         return "Book{title='" + title + "', author=" + author + "}";
     }
-
 }
