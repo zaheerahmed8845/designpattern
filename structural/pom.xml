@@ -9,11 +9,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>behavioural</artifactId>
+    <artifactId>structural</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>template</module>
-        <module>visitor</module>
+        <module>facade</module>
+        <module>adapter</module>
+        <module>decorator</module>
     </modules>
 
     <properties>
