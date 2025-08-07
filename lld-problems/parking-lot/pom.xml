@@ -5,16 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>DesignPattern</artifactId>
+        <artifactId>lld-problems</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>lld-problems</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>elevator-system</module>
-        <module>parking-lot</module>
-    </modules>
+    <artifactId>parking-lot</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
