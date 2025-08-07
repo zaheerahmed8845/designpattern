@@ -6,11 +6,9 @@ import java.time.Period;
 public class LeaveApplication {
 
     public enum Type {Sick, PTO, LOP}
-
     ;
 
     public enum Status {Pending, Approved, Rejected}
-
     ;
 
     private Type type;

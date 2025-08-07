@@ -12,6 +12,7 @@
         <module>creational</module>
         <module>structural</module>
         <module>behavioural</module>
+        <module>lld-problems</module>
     </modules>
 
     <properties>
