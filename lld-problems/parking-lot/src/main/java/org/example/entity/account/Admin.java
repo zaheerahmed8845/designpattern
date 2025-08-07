@@ -6,10 +6,6 @@ import org.example.entity.Exit;
 import org.example.entity.parkingspot.ParkingSpot;
 
 public class Admin extends Account {
-    public boolean resetPassword() {
-        // reset logic
-        return true;
-    }
 
     public boolean addParkingSpot(String floorName, ParkingSpot spot) {
         return true;

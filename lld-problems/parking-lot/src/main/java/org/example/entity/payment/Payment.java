@@ -5,9 +5,9 @@ import org.example.enums.PaymentStatus;
 import java.time.LocalDateTime;
 
 public abstract class Payment {
-    double amount;
+    public double amount;
     PaymentStatus status;
-    LocalDateTime timestamp;
+    public LocalDateTime timestamp;
 
     public abstract boolean initiateTransaction();
 }

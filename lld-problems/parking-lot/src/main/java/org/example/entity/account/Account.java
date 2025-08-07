@@ -9,5 +9,7 @@ public abstract class Account {
     AccountStatus status;
     Person person;
 
-    public abstract boolean resetPassword();
+    public boolean resetPassword() {
+        return true;
+    }
 }

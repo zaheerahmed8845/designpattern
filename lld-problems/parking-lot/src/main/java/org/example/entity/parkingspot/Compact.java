@@ -1,18 +1,7 @@
 package org.example.entity.parkingspot;
 
-import org.example.entity.vehicle.Vehicle;
-
 public class Compact extends ParkingSpot {
-    public boolean assignVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-        this.isFree = false;
-        return true;
+    public Compact(int id) {
+        super(id);
     }
-
-    public boolean removeVehicle() {
-        this.vehicle = null;
-        this.isFree = true;
-        return true;
-    }
-
 }

@@ -1,6 +1,7 @@
 package org.example.entity;
 
 import org.example.entity.parkingspot.ParkingSpot;
+import org.example.entity.vehicle.Vehicle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class ParkingLot {
     public int id;
     public String name;
     public Address address;
-    ParkingRate parkingRate;
+    public ParkingRate parkingRate;
     public Map<String, Entrance> entrances = new HashMap<>();
     public Map<String, Exit> exits = new HashMap<>();
     public Map<String, ParkingSpot> spots = new HashMap<>();
@@ -31,12 +32,15 @@ public class ParkingLot {
         return instance;
     }
 
-    public ParkingTicket getParkingTicket() {
-        return new ParkingTicket();
+    public ParkingTicket getParkingTicket(Vehicle vehicle) {
+        Entrance entrance = entrances.values().stream().findFirst().orElse(null);
+        if (entrance == null || isFull()) return null;
+        ParkingTicket ticket = entrance.getTicket(vehicle);
+        tickets.put(vehicle.licenseNo, ticket);
+        return ticket;
     }
 
     public boolean isFull() {
-        // Check if all spots are full
-        return false;
+        return spots.values().stream().noneMatch(s -> s.isFree);
     }
 }

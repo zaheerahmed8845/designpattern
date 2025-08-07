@@ -1,81 +1,64 @@
 package org.example;
 
 import org.example.entity.*;
+import org.example.entity.parkingfee.HourlyRateStrategy;
 import org.example.entity.parkingspot.Compact;
 import org.example.entity.parkingspot.ParkingSpot;
+import org.example.entity.payment.Cash;
+import org.example.entity.payment.Payment;
 import org.example.entity.vehicle.Car;
 import org.example.entity.vehicle.Vehicle;
 import org.example.enums.TicketStatus;
 
-import java.util.List;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-        // Initialize singleton ParkingLot instance
-        ParkingLot parkingLot = ParkingLot.getInstance();
+    public static void main(String[] args) throws InterruptedException {
+        ParkingLot lot = ParkingLot.getInstance();
 
-        // Setup address
-        Address address = new Address();
-        address.address = "123 Main St";
-        address.city = "Metropolis";
-        address.state = "Metro State";
-        address.country = "Countryland";
-        address.zipCode = 12345;
-
-        // Setup parking lot info
-        parkingLot.id = 1;
-        parkingLot.name = "Downtown Parking";
-        parkingLot.address = address;
-
-        // Add an entrance and exit
         Entrance entrance = new Entrance();
-        entrance.id = 101;
-        parkingLot.entrances.put("ENTRANCE_1", entrance);
+        entrance.id = 1;
+        lot.entrances.put("Main", entrance);
 
         Exit exit = new Exit();
-        exit.id = 201;
-        parkingLot.exits.put("EXIT_1", exit);
+        exit.id = 1;
+        lot.exits.put("Main", exit);
 
-        // Add parking spots
-        ParkingSpot compactSpot = new Compact();
-        compactSpot.id = 1;
-        compactSpot.isFree = true;
-        parkingLot.spots.put("SPOT_1", compactSpot);
-
-        // Add display board
         DisplayBoard board = new DisplayBoard();
-        board.id = 1;
-        board.addParkingSpot("COMPACT", List.of(compactSpot));
-        parkingLot.displayBoards.add(board);
+        board.id = 101;
 
-        // Simulate a customer arriving
-        Vehicle vehicle = new Car();
-        vehicle.licenseNo = "KA-01-1234";
+        ParkingSpot compactSpot = new Compact(1001);
+        board.addParkingSpot("Compact", Arrays.asList(compactSpot));
+        lot.spots.put("C1001", compactSpot);
+        lot.displayBoards.add(board);
 
-        // Assign ticket
-        ParkingTicket ticket = entrance.getTicket();
-        ticket.ticketNo = 1;
-        ticket.entryTime = java.time.LocalDateTime.now();
-        ticket.vehicle = vehicle;
-        ticket.status = TicketStatus.IN_USE;
-        vehicle.assignTicket(ticket);
+        lot.parkingRate = new ParkingRate(new HourlyRateStrategy(50));
 
-        // Assign vehicle to spot
-        if (compactSpot.assignVehicle(vehicle)) {
-            System.out.println("Vehicle parked at spot ID: " + compactSpot.id);
+        Vehicle car = new Car("KA01AB1234");
+        ParkingTicket ticket = lot.getParkingTicket(car);
+
+        if (ticket != null) {
+            System.out.println("Ticket issued for vehicle " + car.licenseNo);
+            compactSpot.assignVehicle(car);
         }
 
-        // Update system ticket map
-        parkingLot.tickets.put("TICKET_1", ticket);
+        Thread.sleep(2000); // Simulate parked time
 
-        // Simulate exit
-        ticket.exitTime = java.time.LocalDateTime.now().plusHours(2);
-        ticket.amount = 40.0;
-        ticket.status = TicketStatus.PAID;
+        exit.validateTicket(ticket);
+        double hours = Duration.between(ticket.exitTime, ticket.entryTime).toHours();
+        ticket.amount = lot.parkingRate.calculate(hours);
 
-        compactSpot.removeVehicle();
-        exit.validateTicket();
+        System.out.println("Amount to pay: Rs. " + ticket.amount);
 
-        System.out.println("Vehicle exited and ticket validated. Total fee: ₹" + ticket.amount);
+        Payment payment = new Cash();
+        payment.amount = ticket.amount;
+        payment.timestamp = LocalDateTime.now();
+        if (payment.initiateTransaction()) {
+            ticket.status = TicketStatus.PAID;
+            compactSpot.removeVehicle();
+            System.out.println("Payment completed. You may exit now.");
+        }
     }
 }

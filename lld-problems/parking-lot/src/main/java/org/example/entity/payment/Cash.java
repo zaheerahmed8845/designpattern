@@ -1,8 +1,10 @@
 package org.example.entity.payment;
 
-public class Cash {
+import org.example.enums.PaymentStatus;
+
+public class Cash extends Payment {
     public boolean initiateTransaction() {
-        // Implementation
+        status = PaymentStatus.COMPLETED;
         return true;
     }
 }

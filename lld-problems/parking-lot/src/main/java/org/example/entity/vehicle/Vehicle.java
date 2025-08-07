@@ -4,7 +4,13 @@ import org.example.entity.ParkingTicket;
 
 public abstract class Vehicle {
     public String licenseNo;
-    public ParkingTicket ticket;
+    ParkingTicket ticket;
 
-    public abstract void assignTicket(ParkingTicket ticket);
+    public Vehicle(String licenseNo) {
+        this.licenseNo = licenseNo;
+    }
+
+    public void assignTicket(ParkingTicket ticket) {
+        this.ticket = ticket;
+    }
 }
