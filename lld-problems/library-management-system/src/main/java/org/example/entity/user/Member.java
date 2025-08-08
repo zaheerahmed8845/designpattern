@@ -11,26 +11,17 @@ public class Member extends User implements BookObserver {
     private LocalDateTime dateOfMembership;
     private int totalBooksCheckedOut;
 
-    public int getTotalBooksCheckedOut() {
-        return totalBooksCheckedOut;
-    }
-
     public boolean reserveBookItem(BookItem bookItem) {
-        // Create reservation (ONE-WAY: User knows reservation; reservation knows BookItem)
         BookReservation reservation = new BookReservation(bookItem, this.id);
         relatedReservations.add(reservation);
-        // Optionally observe availability
         bookItem.registerObserver(this);
         return true;
     }
 
     public void checkoutBookItem(BookItem bookItem) {
-        if (bookItem.isReferenceOnly()) {
-            throw new IllegalStateException("Reference-only item cannot be checked out");
-        }
-        // Create lending record (ONE-WAY: Lending -> BookItem)
-        BookLending lending = new BookLending(bookItem, this.id, LocalDateTime.now(), LocalDateTime.now().plusDays(15));
-        // Track association from User side only
+        if (bookItem.isReferenceOnly()) throw new IllegalStateException("Reference-only item cannot be checked out");
+        BookLending lending = new BookLending(bookItem, this, LocalDateTime.now(), LocalDateTime.now().plusDays(15));
+        this.linkLending(lending);
         relatedBookItems.add(bookItem);
         totalBooksCheckedOut++;
         bookItem.checkout(this.id);
@@ -42,10 +33,10 @@ public class Member extends User implements BookObserver {
     }
 
     public void renewBookItem(BookItem bookItem) {
-        // renewal logic would update corresponding lending record in persistence
     }
 
-    public void checkForFine(String bookItemId) { /* calculate fines if overdue */ }
+    public void checkForFine(String bookItemId) {
+    }
 
     @Override
     public void onBookAvailable(BookItem bookItem) {

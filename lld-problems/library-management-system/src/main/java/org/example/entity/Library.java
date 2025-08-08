@@ -1,10 +1,20 @@
 package org.example.entity;
 
-public class Library {
+import org.example.entity.book.BookItem;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Library {
     private String name;
     private Address address;
+    private final List<BookItem> bookItems = new ArrayList<>(); // Composition: Library composed of BookItems
 
-    public Address getAddress() {
-        return address;
+    public void addBookItem(BookItem item) {
+        bookItems.add(item);
+    }
+
+    public List<BookItem> getBookItems() {
+        return bookItems;
     }
 }
