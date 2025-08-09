@@ -1,5 +1,6 @@
-package org.example.entity;
+package org.example.entity.player;
 
+import org.example.entity.Person;
 import org.example.enums.AccountStatus;
 
 public class Dealer extends Player {

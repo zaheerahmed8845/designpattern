@@ -1,5 +1,7 @@
-package org.example.entity;
+package org.example.entity.player;
 
+import org.example.entity.Hand;
+import org.example.entity.Person;
 import org.example.enums.AccountStatus;
 
 public abstract class Player {

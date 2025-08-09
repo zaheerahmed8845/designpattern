@@ -1,6 +1,11 @@
 package org.example;
 
-import org.example.entity.*;
+import org.example.entity.BlackJackController;
+import org.example.entity.BlackJackGameView;
+import org.example.entity.Person;
+import org.example.entity.Shoe;
+import org.example.entity.player.BlackjackPlayer;
+import org.example.entity.player.Dealer;
 
 public class Main {
     public static void main(String[] args) {

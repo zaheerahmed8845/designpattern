@@ -1,5 +1,8 @@
 package org.example.entity;
 
+import org.example.entity.player.BlackjackPlayer;
+import org.example.entity.player.Dealer;
+
 public class BlackJackGameView {
 
     public void showHands(BlackjackPlayer player, Dealer dealer, boolean revealDealerHole) {
