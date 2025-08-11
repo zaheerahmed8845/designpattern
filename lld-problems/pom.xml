@@ -18,6 +18,7 @@
         <module>amazon-locker-service</module>
         <module>vending-machine</module>
         <module>blackjack-game</module>
+        <module>meeting-scheduler</module>
     </modules>
 
     <properties>
