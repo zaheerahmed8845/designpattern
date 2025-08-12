@@ -7,6 +7,8 @@ import org.example.notification.NotificationService;
 import org.example.payment.CreditCard;
 import org.example.payment.Payment;
 import org.example.payment.PaymentFactory;
+import org.example.person.Admin;
+import org.example.person.Customer;
 import org.example.pricing.PricingContext;
 import org.example.pricing.PricingEngine;
 import org.example.search.Catalog;

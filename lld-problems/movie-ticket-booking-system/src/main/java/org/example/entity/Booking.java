@@ -2,6 +2,7 @@ package org.example.entity;
 
 import org.example.enums.BookingStatus;
 import org.example.payment.Payment;
+import org.example.person.Customer;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;

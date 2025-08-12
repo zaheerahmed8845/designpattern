@@ -3,6 +3,7 @@ package org.example.entity;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Movie {
     private String title, genre, language;

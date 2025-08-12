@@ -1,4 +1,6 @@
-package org.example.entity;
+package org.example.person;
+
+import org.example.entity.Address;
 
 public abstract class Person {
     private String name, email, phone;

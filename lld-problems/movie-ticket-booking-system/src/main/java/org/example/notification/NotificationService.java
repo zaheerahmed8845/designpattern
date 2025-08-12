@@ -1,6 +1,6 @@
 package org.example.notification;
 
-import org.example.entity.Person;
+import org.example.person.Person;
 
 public class NotificationService {
     private final EmailNotification email = new EmailNotification();

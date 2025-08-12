@@ -1,4 +1,9 @@
-package org.example.entity;
+package org.example.person;
+
+import org.example.entity.Cinema;
+import org.example.entity.Hall;
+import org.example.entity.Movie;
+import org.example.entity.ShowTime;
 
 public class Admin extends Person {
     public boolean addMovie(Movie m) { /*repo*/

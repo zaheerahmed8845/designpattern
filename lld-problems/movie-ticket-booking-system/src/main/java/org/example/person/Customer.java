@@ -1,4 +1,6 @@
-package org.example.entity;
+package org.example.person;
+
+import org.example.entity.Booking;
 
 import java.util.ArrayList;
 import java.util.List;

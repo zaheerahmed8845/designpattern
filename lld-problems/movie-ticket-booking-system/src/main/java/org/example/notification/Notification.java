@@ -1,6 +1,6 @@
 package org.example.notification;
 
-import org.example.entity.Person;
+import org.example.person.Person;
 
 import java.time.OffsetDateTime;
 
