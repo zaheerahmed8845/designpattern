@@ -1,12 +1,20 @@
 package org.example.notification;
 
+import org.example.entity.Person;
+
 public class NotificationService {
-    public void bookingConfirmed(String email, String phone, String bookingId, double amount) {
-        System.out.println("[EMAIL] to " + email + " :: Booking " + bookingId + " confirmed. Amount: " + amount);
-        System.out.println("[SMS] to " + phone + " :: Booking " + bookingId + " confirmed.");
+    private final EmailNotification email = new EmailNotification();
+    private final PhoneNotification sms = new PhoneNotification();
+
+    public void sendBookingConfirmed(Person person, String bookingId, double amount) {
+        email.setContent("Your booking #" + bookingId + " is confirmed. Amount: " + amount);
+        email.sendNotification(person);
+        sms.setContent("Booking #" + bookingId + " confirmed.");
+        sms.sendNotification(person);
     }
 
-    public void bookingFailed(String email, String phone, String bookingId) {
-        System.out.println("[EMAIL] to " + email + " :: Booking " + bookingId + " failed.");
+    public void sendBookingFailed(Person person, String bookingId) {
+        email.setContent("Your booking #" + bookingId + " failed. Please retry.");
+        email.sendNotification(person);
     }
 }

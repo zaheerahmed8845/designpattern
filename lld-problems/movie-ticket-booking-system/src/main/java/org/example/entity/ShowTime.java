@@ -1,53 +1,68 @@
 package org.example.entity;
 
-import org.example.seat.Seat;
+import org.example.enums.SeatStatus;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Collection;
-import java.util.LinkedHashMap;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class ShowTime {
-    private final String id;
-    private final Movie movie;
-    private final LocalDate date;
-    private final LocalTime start;
-    private final Map<String, Seat> seats = new LinkedHashMap<>();
+    private int showId;
+    private LocalDateTime startTime, date;
+    private int durationMinutes;
+    private Movie movie;
+    private Hall hall;
+    private final Map<String, SeatStatus> seatStatuses = new HashMap<>();
 
-    public ShowTime(String id, Movie movie, LocalDate date, LocalTime start) {
-        this.id = id;
-        this.movie = movie;
-        this.date = date;
-        this.start = start;
+    public int getShowId() {
+        return showId;
     }
 
-    public String id() {
-        return id;
+    public void setShowId(int v) {
+        showId = v;
     }
 
-    public Movie movie() {
-        return movie;
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
-    public LocalDate date() {
+    public void setStartTime(LocalDateTime v) {
+        startTime = v;
+    }
+
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public LocalTime start() {
-        return start;
+    public void setDate(LocalDateTime v) {
+        date = v;
     }
 
-    public Collection<Seat> seats() {
-        return seats.values();
+    public int getDurationMinutes() {
+        return durationMinutes;
     }
 
-    public void addSeat(Seat s) {
-        seats.put(s.id(), s);
+    public void setDurationMinutes(int v) {
+        durationMinutes = v;
     }
 
-    public Optional<Seat> seat(String seatId) {
-        return Optional.ofNullable(seats.get(seatId));
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie v) {
+        movie = v;
+    }
+
+    public Hall getHall() {
+        return hall;
+    }
+
+    public void setHall(Hall v) {
+        hall = v;
+    }
+
+    public Map<String, SeatStatus> getSeatStatuses() {
+        return seatStatuses;
     }
 }

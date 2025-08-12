@@ -1,9 +1,5 @@
 package org.example.enums;
 
 public enum BookingStatus {
-    PENDING,
-    CONFIRMED,
-    CANCELED,
-    DECLINED,
-    REFUNDED
+    PENDING, CONFIRMED, CANCELED, DECLINED, REFUNDED
 }

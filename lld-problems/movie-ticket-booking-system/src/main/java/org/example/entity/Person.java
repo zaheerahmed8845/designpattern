@@ -1,41 +1,38 @@
 package org.example.entity;
 
-public class Person {
-
-    private String name;
+public abstract class Person {
+    private String name, email, phone;
     private Address address;
-    private String email;
-    private String phone;
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setName(String v) {
+        name = v;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String v) {
+        email = v;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone(String v) {
+        phone = v;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address v) {
+        address = v;
     }
 }

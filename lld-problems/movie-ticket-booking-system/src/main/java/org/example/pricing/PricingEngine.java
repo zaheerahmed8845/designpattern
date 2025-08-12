@@ -1,9 +1,4 @@
-package org.example.price;
-
-import org.example.entity.PricingContext;
-import org.example.price.strategy.GoldPricing;
-import org.example.price.strategy.PlatinumPricing;
-import org.example.price.strategy.SilverPricing;
+package org.example.pricing;
 
 public class PricingEngine {
     public double quote(PricingContext c) {

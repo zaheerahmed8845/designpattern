@@ -1,60 +1,54 @@
 package org.example.entity;
 
 public class Address {
+    private String line1, line2, city, state, zipCode, country;
 
-    private String line1;
-    private String line2;
-    private String city;
-    private String state;
-    private String zipCode;
-    private String country;
-
-    // getters/setters
     public String getLine1() {
         return line1;
     }
 
-    public void setLine1(String line1) {
-        this.line1 = line1;
+    public void setLine1(String v) {
+        line1 = v;
     }
 
     public String getLine2() {
         return line2;
     }
 
-    public void setLine2(String line2) {
-        this.line2 = line2;
+    public void setLine2(String v) {
+        line2 = v;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCity(String v) {
+        city = v;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setState(String v) {
+        state = v;
     }
 
     public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setZipCode(String v) {
+        zipCode = v;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCountry(String v) {
+        country = v;
     }
+
 }

@@ -1,8 +1,5 @@
 package org.example.enums;
 
 public enum PaymentStatus {
-    PENDING,
-    CONFIRMED,
-    DECLINED,
-    REFUNDED
+    PENDING, CONFIRMED, DECLINED, REFUNDED
 }
