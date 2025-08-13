@@ -5,24 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>DesignPattern</artifactId>
+        <artifactId>lld-problems</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>lld-problems</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>elevator-system</module>
-        <module>parking-lot</module>
-        <module>library-management-system</module>
-        <module>amazon-locker-service</module>
-        <module>vending-machine</module>
-        <module>blackjack-game</module>
-        <module>meeting-scheduler</module>
-        <module>movie-ticket-booking-system</module>
-        <module>car-rental-system</module>
-        <module>atm-system</module>
-    </modules>
+    <artifactId>atm-system</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
