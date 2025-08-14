@@ -24,6 +24,7 @@
         <module>atm-system</module>
         <module>chess-game</module>
         <module>hotel-management-system</module>
+        <module>amazon-online-shopping</module>
     </modules>
 
     <properties>
