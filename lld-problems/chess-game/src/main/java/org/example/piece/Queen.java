@@ -7,4 +7,3 @@ public class Queen extends Piece {
         super(w, new QueenMovement());
     }
 }
-

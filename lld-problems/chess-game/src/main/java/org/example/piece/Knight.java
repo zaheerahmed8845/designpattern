@@ -7,4 +7,3 @@ public class Knight extends Piece {
         super(w, new KnightMovement());
     }
 }
-

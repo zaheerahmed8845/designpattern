@@ -7,4 +7,3 @@ public class Bishop extends Piece {
         super(w, new BishopMovement());
     }
 }
-

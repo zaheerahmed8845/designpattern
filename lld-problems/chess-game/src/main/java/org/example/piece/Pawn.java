@@ -7,4 +7,3 @@ public class Pawn extends Piece {
         super(w, new PawnMovement());
     }
 }
-
