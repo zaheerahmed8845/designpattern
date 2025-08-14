@@ -23,6 +23,7 @@
         <module>car-rental-system</module>
         <module>atm-system</module>
         <module>chess-game</module>
+        <module>hotel-management-system</module>
     </modules>
 
     <properties>
