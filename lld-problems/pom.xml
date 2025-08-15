@@ -26,6 +26,7 @@
         <module>hotel-management-system</module>
         <module>amazon-online-shopping</module>
         <module>stack-overflow</module>
+        <module>restaurant-management-system</module>
     </modules>
 
     <properties>
