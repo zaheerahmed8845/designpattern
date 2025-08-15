@@ -27,6 +27,7 @@
         <module>amazon-online-shopping</module>
         <module>stack-overflow</module>
         <module>restaurant-management-system</module>
+        <module>facebook</module>
     </modules>
 
     <properties>
