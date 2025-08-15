@@ -25,6 +25,7 @@
         <module>chess-game</module>
         <module>hotel-management-system</module>
         <module>amazon-online-shopping</module>
+        <module>stack-overflow</module>
     </modules>
 
     <properties>
