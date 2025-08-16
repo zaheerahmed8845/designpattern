@@ -30,6 +30,7 @@
         <module>facebook</module>
         <module>online-stock-brokerage-system</module>
         <module>jigsaw-puzzle</module>
+        <module>airline-management-system</module>
     </modules>
 
     <properties>
