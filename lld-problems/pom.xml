@@ -28,6 +28,7 @@
         <module>stack-overflow</module>
         <module>restaurant-management-system</module>
         <module>facebook</module>
+        <module>online-stock-brokerage-system</module>
     </modules>
 
     <properties>
