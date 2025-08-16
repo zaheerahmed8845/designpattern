@@ -29,6 +29,7 @@
         <module>restaurant-management-system</module>
         <module>facebook</module>
         <module>online-stock-brokerage-system</module>
+        <module>jigsaw-puzzle</module>
     </modules>
 
     <properties>
