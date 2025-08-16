@@ -31,6 +31,7 @@
         <module>online-stock-brokerage-system</module>
         <module>jigsaw-puzzle</module>
         <module>airline-management-system</module>
+        <module>espncricinfo</module>
     </modules>
 
     <properties>
