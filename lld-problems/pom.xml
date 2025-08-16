@@ -32,6 +32,7 @@
         <module>jigsaw-puzzle</module>
         <module>airline-management-system</module>
         <module>espncricinfo</module>
+        <module>linkedin-system</module>
     </modules>
 
     <properties>
